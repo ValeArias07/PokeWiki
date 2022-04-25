@@ -1,4 +1,4 @@
-package com.icesi.pokewiki
+package com.icesi.pokewiki.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

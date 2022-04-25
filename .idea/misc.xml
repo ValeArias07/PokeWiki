@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/drawable/cached-48px.xml" value="0.1135" />
         <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/activity_catch.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/bar.xml" value="0.18" />
         <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/catch_activity.xml" value="0.33" />
-        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/info_activity.xml" value="0.25" />
+        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/info_activity.xml" value="0.18" />
         <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/login_activity.xml" value="0.22" />
-        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/menu_activity.xml" value="0.33" />
+        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/menu_activity.xml" value="0.2" />
+        <entry key="..\:/Users/Valentina/AndroidStudioProjects/PokeWiki/app/src/main/res/layout/pokerow.xml" value="0.33" />
       </map>
     </option>
   </component>

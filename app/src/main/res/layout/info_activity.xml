@@ -40,7 +40,6 @@
                         android:layout_width="45dp"
                         android:layout_height="46dp"
                         android:layout_marginEnd="10dp"
-                        android:text="X"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +52,17 @@
                         app:layout_constraintStart_toEndOf="@+id/imageView6"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/logo" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="31dp"
+                        android:layout_height="34dp"
+                        android:elevation="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/exitButtonM"
+                        app:layout_constraintStart_toStartOf="@+id/exitButtonM"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/exit" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.appbar.AppBarLayout>
@@ -88,7 +98,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/pokeInfoImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -108,7 +118,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/pokeInfoImage" />
 
             <TextView
                 android:id="@+id/typeText"
@@ -131,7 +141,7 @@
                 app:layout_constraintHorizontal_bias="0.777"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/typeText"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/arma" />
 
             <TextView
                 android:id="@+id/attackText"
@@ -153,7 +163,7 @@
                 app:layout_constraintHorizontal_bias="0.216"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/typeText"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/visa" />
 
             <TextView
                 android:id="@+id/speedText"
@@ -176,7 +186,7 @@
                 app:layout_constraintHorizontal_bias="0.768"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/typeText"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/velocidad" />
 
             <TextView
                 android:id="@+id/textView17"
@@ -185,6 +195,7 @@
                 android:layout_marginBottom="12dp"
                 android:text="Velocidad"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView11"
                 app:layout_constraintEnd_toEndOf="@+id/imageView11"
                 app:layout_constraintHorizontal_bias="0.6"
@@ -222,7 +233,7 @@
                 app:layout_constraintHorizontal_bias="0.216"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/typeText"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/defensa" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -231,6 +242,7 @@
                 android:layout_marginBottom="16dp"
                 android:text="Vida"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView13"
                 app:layout_constraintEnd_toEndOf="@+id/imageView13"
                 app:layout_constraintStart_toStartOf="@+id/imageView13" />
@@ -242,6 +254,7 @@
                 android:layout_marginBottom="20dp"
                 android:text="Ataque"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView4"
                 app:layout_constraintEnd_toEndOf="@+id/imageView4"
                 app:layout_constraintHorizontal_bias="0.47"
@@ -253,6 +266,7 @@
                 android:layout_marginBottom="20dp"
                 android:text="Defensa"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView121"
                 app:layout_constraintEnd_toEndOf="@+id/imageView121"
                 app:layout_constraintStart_toStartOf="@+id/imageView121" />
