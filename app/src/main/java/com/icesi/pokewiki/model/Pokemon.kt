@@ -7,5 +7,6 @@ data class Pokemon (
         val pSpeed: String,
         val pLive: String,
         val pDate: String,
-        val pImage: String
+        val pImage: String,
+        val stats: ArrayList<Stat>
         )
