@@ -72,8 +72,8 @@
             android:id="@+id/catchText"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Atrapa un pokemón "
             android:inputType="textPersonName"
@@ -82,30 +82,45 @@
 
         <Button
             android:id="@+id/catchButton"
-            android:layout_width="wrap_content"
+            android:layout_width="54dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginStart="20dp"
             android:text="Ver"
+            android:textSize="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/catchText"
-            app:layout_constraintStart_toEndOf="@+id/catchText" />
+            app:layout_constraintStart_toEndOf="@+id/catchText"
+            app:layout_constraintTop_toTopOf="@+id/catchText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/randomButton"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:text="Random"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/catchButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toEndOf="@+id/catchButton"
+            app:layout_constraintTop_toTopOf="@+id/catchButton"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_width="254dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/group" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Mis pokemón"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -122,9 +137,9 @@
 
         <EditText
             android:id="@+id/searchText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_width="245dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Busca un pokemón "
@@ -139,6 +154,8 @@
             android:layout_marginStart="40dp"
             android:text="Buscar"
             app:layout_constraintBottom_toBottomOf="@+id/searchText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/searchText"
             app:layout_constraintTop_toTopOf="@+id/searchText"
             app:layout_constraintVertical_bias="1.0" />
