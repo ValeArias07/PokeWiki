@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501670751522",
+    "project_id": "pokewiki-ec482",
+    "storage_bucket": "pokewiki-ec482.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501670751522:android:10a4230cf475232449497b",
+        "android_client_info": {
+          "package_name": "com.icesi.pokewiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501670751522-q6e7kom6nfaud6ep2d2ai4ojopu7shtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMpWAndXE8cMm3oc_Vp2NKunFcLy8zNp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501670751522-q6e7kom6nfaud6ep2d2ai4ojopu7shtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
