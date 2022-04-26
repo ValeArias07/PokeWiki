@@ -2,10 +2,12 @@ package com.example.mysocialnetwork.recyclerModel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.icesi.pokewiki.R
 import com.icesi.pokewiki.databinding.MenuActivityBinding
 import com.icesi.pokewiki.model.Pokemon
+
 
 class PokeAdapter : RecyclerView.Adapter<PokeView>() {
 
@@ -35,7 +37,6 @@ class PokeAdapter : RecyclerView.Adapter<PokeView>() {
         skeleton.pokemon = pokemon
         skeleton.pokeName.text = pokemon.pName
         skeleton.pokeDate.text = pokemon.pDate
-        //skeleton..text = pokemon.pDate
     }
 
     override fun getItemCount(): Int {

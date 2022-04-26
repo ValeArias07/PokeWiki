@@ -15,5 +15,6 @@ class PokeView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     /// UI Components
     var pokeName : TextView = itemView.findViewById(R.id.pokeNameText)
     var pokeDate: TextView = itemView.findViewById(R.id.datePokeText)
+    var pokeImage: ImageView = itemView.findViewById(R.id.pokeImage)
 
 }
