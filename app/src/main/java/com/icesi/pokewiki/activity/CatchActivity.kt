@@ -1,7 +1,6 @@
 package com.icesi.pokewiki.activity
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -11,10 +10,10 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
-import com.icesi.pokewiki.R
 import com.icesi.pokewiki.databinding.InfoActivityBinding
 import com.icesi.pokewiki.model.Pokemon
 import com.icesi.pokewiki.model.PokemonResponse
@@ -27,42 +26,47 @@ import java.util.*
 
 class CatchActivity : AppCompatActivity() {
     private lateinit var pokemon: Pokemon
+    private lateinit var currentUser: String
     private lateinit var pokeResponse: PokemonResponse
     private lateinit var binding: InfoActivityBinding
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
-        var gson = Gson()
         super.onCreate(savedInstanceState)
+        currentUser = intent.extras?.getString("currentUser").toString()
         binding = InfoActivityBinding.inflate(layoutInflater)
+
+        var gson = Gson()
 
         if(intent.extras?.getString("mode") == "catch"){
             binding.leaveButton.isVisible=false
             lifecycleScope.launch(Dispatchers.IO){
                 var url ="https://pokeapi.co/api/v2/pokemon/"+intent.extras?.getString("currentPokemon")
                 var info = HTTPSWebUtilDomi().GETRequest(url)
+                Log.e(">>>", info)
                 withContext(Dispatchers.Main){
                     pokeResponse = gson.fromJson(info, PokemonResponse::class.java)
                     transformData(pokeResponse)
                 }
             }
-
         }else{
             binding.catchPokButton.isVisible=false
         }
-
         setContentView(binding.root)
-
         val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ::onResult)
-
         binding.catchPokButton.setOnClickListener {
             savePokemon(pokemon)
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java).apply{
+                putExtra("currentUser", currentUser)
+            }
+
             launcher.launch(intent)
         }
 
         binding.leaveButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java).apply{
+                putExtra("currentUser", currentUser)
 
+            }
             launcher.launch(intent)
         }
 
@@ -83,38 +87,46 @@ class CatchActivity : AppCompatActivity() {
             Integer.parseInt(pokeResponse?.stats?.get(2)?.base_stat!!),
             Integer.parseInt(pokeResponse?.stats?.get(3)?.base_stat!!),
             date.format(Date()),
-            pokeResponse?.sprites.other.dream_world.front_default.toString()
+            pokeResponse?.sprites.other.home.front_default.toString()
         )
         setData(pokemon)
     }
     private fun setData(pokemon: Pokemon) {
-        binding.nameText.text = pokemon.pName
-        binding.typeText.text =(pokemon.pType)
-        binding.defenseText.text =(""+pokemon.pDefense)
-        binding.attackText.text =(""+pokemon.pAttack)
-        binding.lifeText.text =(""+pokemon.pLive)
-        binding.speedText.text =(""+pokemon.pSpeed)
+        binding.nameText.text = pokemon.name
+        binding.typeText.text =(pokemon.type)
+        binding.defenseText.text =(""+pokemon.defense)
+        binding.attackText.text =(""+pokemon.attack)
+        binding.lifeText.text =(""+pokemon.life)
+        binding.speedText.text =(""+pokemon.speed)
+        Glide.with(applicationContext).load(pokemon.img).into(binding.pokeInfoImage)
     }
 
     private fun savePokemon(pokemon: Pokemon) {
-        val add = HashMap<String,Any>()
+        val add = HashMap<String, Any>()
+        val user = intent.extras?.getString("currentUser").toString()
+        add["name"] = pokemon.name
+        add["type"] = pokemon.type
+        add["defense"] = pokemon.defense
+        add["attack"] = pokemon.attack
+        add["life"] = pokemon.life
+        add["speed"] = pokemon.speed
+        add["img"] = pokemon.img
 
-        add["name"] = pokemon.pName
-        add["type"] = pokemon.pType
-        add["defense"] = pokemon.pDefense
-        add["attack"] = pokemon.pAttack
-        add["life"] = pokemon.pLive
-        add["speed"] = pokemon.pSpeed
-        add["img"] = pokemon.pImage
-
-            Firebase.firestore.collection("users")
-            .document("valentina")
+        Firebase.firestore.collection("users")
+            .document(user)
             .collection("pokemon")
-            .add(add)
+            .document(pokemon.name)
+            .set(add)
+
+
     }
 
+    }
+
+    private fun addNewPokemon(){
+
+    }
     private fun onResult(activityResult: ActivityResult?) {
 
     }
 
-}

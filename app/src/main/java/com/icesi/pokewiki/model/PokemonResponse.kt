@@ -30,7 +30,7 @@ data class Sprite(
 )
 
 data class Artwork (
-    val dream_world: LinkArt
+    val home: LinkArt
         )
 
 class LinkArt (
