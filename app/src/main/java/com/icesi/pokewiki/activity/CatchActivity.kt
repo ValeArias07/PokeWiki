@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.mysocialnetwork.recyclerModel.PokeAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
@@ -29,12 +30,13 @@ class CatchActivity : AppCompatActivity() {
     private lateinit var currentUser: String
     private lateinit var pokeResponse: PokemonResponse
     private lateinit var binding: InfoActivityBinding
+    private lateinit var adapter: PokeAdapter
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         currentUser = intent.extras?.getString("currentUser").toString()
         binding = InfoActivityBinding.inflate(layoutInflater)
-
+        adapter = PokeAdapter()
         var gson = Gson()
 
         if(intent.extras?.getString("mode") == "catch"){
@@ -117,8 +119,8 @@ class CatchActivity : AppCompatActivity() {
             .collection("pokemon")
             .document(pokemon.name)
             .set(add)
-
-
+        adapter.addPokemon(pokemon)
+        adapter.notifyDataSetChanged()
     }
 
     }
@@ -126,7 +128,7 @@ class CatchActivity : AppCompatActivity() {
     private fun addNewPokemon(){
 
     }
-    private fun onResult(activityResult: ActivityResult?) {
+    fun onResult(activityResult: ActivityResult?) {
 
     }
 

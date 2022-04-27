@@ -3,43 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="94dp"
+    <ImageView
+        android:id="@+id/pokeImage"
+        android:layout_width="87dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_launcher_background" />
 
-        <ImageView
-            android:id="@+id/pokeImage"
-            android:layout_width="87dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+    <TextView
+        android:id="@+id/pokeNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Nombre de pokemon"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        tools:layout_editor_absoluteY="16dp" />
 
-        <TextView
-            android:id="@+id/pokeNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="Nombre de pokemon"
-            android:textSize="18dp"
-            app:layout_constraintStart_toEndOf="@+id/pokeImage"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/datePokeText"
+        android:layout_width="35dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:text="Fecha"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        tools:layout_editor_absoluteY="40dp" />
 
-        <TextView
-            android:id="@+id/datePokeText"
-            android:layout_width="35dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="16dp"
-            android:text="Fecha"
-            android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/pokeImage"
-            app:layout_constraintTop_toBottomOf="@+id/pokeNameText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
