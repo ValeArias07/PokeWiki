@@ -16,6 +16,7 @@ import kotlinx.coroutines.withContext
 
 class PokeAdapter() : RecyclerView.Adapter<PokeView>() {
 
+    var clickRowListener: PokeView.ClickRowListener? = null
     private lateinit var binding: MenuActivityBinding
     private val pokemons = ArrayList<Pokemon>()
 
@@ -35,6 +36,7 @@ class PokeAdapter() : RecyclerView.Adapter<PokeView>() {
         binding = MenuActivityBinding.inflate(inflater)
         val row = inflater.inflate(R.layout.pokerow, parent, false)
         val pokeView = PokeView(row)
+        pokeView.clickRowListener = clickRowListener
         return pokeView
     }
 

@@ -9,13 +9,14 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mysocialnetwork.recyclerModel.PokeAdapter
+import com.example.mysocialnetwork.recyclerModel.PokeView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.icesi.pokewiki.databinding.MenuActivityBinding
 import com.icesi.pokewiki.model.Pokemon
 import java.util.ArrayList
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
     private lateinit var currentUser: String
     private lateinit var binding: MenuActivityBinding
     private lateinit var adapter: PokeAdapter
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity() {
     private fun setAdapter() {
         var recycler = binding.recycler
         adapter = PokeAdapter()
+        adapter.clickRowListener = this
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = adapter
     }
@@ -114,5 +116,20 @@ class MainActivity : AppCompatActivity() {
     }
      fun onResult(activityResult: ActivityResult?) {
 
+    }
+
+    override fun onClickRowListener(pokeName: String) {
+
+        //// Buscar pokemon y de ahi pasarlo
+        /**
+         *   val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ::onResult)
+        val intent = Intent(this, CatchActivity::class.java).apply{
+        putExtra("mode", "search")
+        putExtra("currentUser", currentUser)
+        ///putExtra("currentPokemon", )
+        }
+        launcher.launch(intent)
+         */
+        Toast.makeText(applicationContext, "Si sirve" + pokeName, Toast.LENGTH_SHORT).show()
     }
 }

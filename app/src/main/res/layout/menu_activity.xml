@@ -70,21 +70,23 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="638dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/catchText"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="339dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="56dp"
             android:ems="10"
             android:hint="Atrapa un pokemón "
             android:inputType="textPersonName"
@@ -92,37 +94,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/catchButton"
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="36dp"
-            android:textSize="10dp"
-            app:iconTint="#00877F69"
-            app:layout_constraintBottom_toBottomOf="@+id/catchText"
-            app:layout_constraintStart_toEndOf="@+id/catchText"
-            app:layout_constraintTop_toTopOf="@+id/catchText"
-            app:layout_constraintVertical_bias="0.0"
-            app:rippleColor="#FFFFFF" />
-
-        <Button
             android:id="@+id/randomButton"
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/catchButton"
+            android:layout_width="97dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="36dp"
+            android:text="   random"
+            android:textSize="11dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
-            app:layout_constraintStart_toEndOf="@+id/catchButton"
-            app:layout_constraintTop_toTopOf="@+id/catchButton"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/catchButton2" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="254dp"
             android:layout_height="94dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="180dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/group" />
@@ -131,7 +117,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:text="Mis pokemón"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -139,23 +125,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="407dp"
-            android:layout_height="351dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <EditText
             android:id="@+id/searchText"
             android:layout_width="220dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="Busca un pokemón "
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -172,28 +152,90 @@
             app:layout_constraintTop_toTopOf="@+id/searchText"
             app:layout_constraintVertical_bias="1.0" />
 
+        <Button
+            android:id="@+id/catchButton"
+            android:layout_width="106dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="36dp"
+            android:text="Ver"
+            android:textSize="11dp"
+            android:textStyle="bold"
+            app:iconTint="#00877F69"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/catchButton2"
+            app:rippleColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/catchButton2"
+            android:layout_width="106dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:text="Atrapar"
+            android:textSize="11dp"
+            android:textStyle="bold"
+            app:iconTint="#00877F69"
+            app:layout_constraintEnd_toStartOf="@+id/randomButton"
+            app:layout_constraintStart_toEndOf="@+id/catchButton"
+            app:layout_constraintTop_toBottomOf="@+id/catchText"
+            app:rippleColor="#FFFFFF" />
+
         <ImageView
             android:id="@+id/imageView12"
-            android:layout_width="32dp"
-            android:layout_height="31dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
             android:elevation="100dp"
             app:layout_constraintBottom_toBottomOf="@+id/catchButton"
-            app:layout_constraintEnd_toEndOf="@+id/catchButton"
             app:layout_constraintStart_toStartOf="@+id/catchButton"
             app:layout_constraintTop_toTopOf="@+id/catchButton"
             app:srcCompat="@drawable/done" />
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="32dp"
-            android:layout_height="31dp"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="3dp"
             android:elevation="100dp"
             app:layout_constraintBottom_toBottomOf="@+id/randomButton"
-            app:layout_constraintEnd_toEndOf="@+id/randomButton"
             app:layout_constraintStart_toStartOf="@+id/randomButton"
             app:layout_constraintTop_toTopOf="@+id/randomButton"
+            app:layout_constraintVertical_bias="0.47000003"
             app:srcCompat="@drawable/random" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Encuentra nuevos pokemón!"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
