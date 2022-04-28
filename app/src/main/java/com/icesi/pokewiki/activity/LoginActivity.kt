@@ -24,6 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
         val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ::onResult)
 
+        binding.newUserText.setOnClickListener {
+            val intent = Intent(this, NewUserActivity::class.java).apply{
+            }
+            startActivity(intent)
+        }
+
         binding.loginBtn.setOnClickListener {
             var usernameCheck = ""+binding.usernameText.text
             Firebase.firestore.collection("users").get().addOnCompleteListener { task ->
@@ -34,10 +40,9 @@ class LoginActivity : AppCompatActivity() {
                         val intent = Intent(this, MainActivity::class.java).apply{
                             putExtra("currentUser", userInDB)
                         }
-                        launcher.launch(intent)
-
+                        startActivity(intent)
                     }else{
-                        Toast.makeText(applicationContext, "Nombre de usuario incorrecto", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "Nombre de usuario incorrecto", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
