@@ -14,15 +14,13 @@ import com.icesi.pokewiki.model.Pokemon
 import com.icesi.pokewiki.model.User
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: LoginActivityBinding
-    val db = Firebase.firestore
+    private val binding: LoginActivityBinding by lazy {
+        LoginActivityBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = LoginActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ::onResult)
 
         binding.newUserText.setOnClickListener {
             val intent = Intent(this, NewUserActivity::class.java).apply{

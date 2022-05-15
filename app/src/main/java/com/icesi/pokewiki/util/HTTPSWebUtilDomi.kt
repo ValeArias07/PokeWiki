@@ -62,10 +62,7 @@ class HTTPSWebUtilDomi {
         return client.inputStream.bufferedReader().readText()
     }
 
-
     companion object {
         const val FCM_KEY:String = "AAAA5Y28dsA:APA91bHvrWHBdEZIbpl2hmPufyiNgJp1ZNiCenoAb58dM2ydWkGTx5cYtQzlVewJUL2PL0s1Rkir0mTLKtEA0vrrHyeG1bID3HuCd0UVtO91bcuciPPWxZcSsosmRGmGV9N4tEeH90Gr"
     }
-
-
 }

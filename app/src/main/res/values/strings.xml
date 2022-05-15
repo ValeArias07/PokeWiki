@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PokeWiki</string>
+    <string name="type_username">Escribe tu nombre de usuario para iniciar:</string>
+    <string name="login">INGRESA</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="dont_have_user">¿No tienes usuario?</string>
+    <string name="create_new_user">¡Crea uno!</string>
 </resources>

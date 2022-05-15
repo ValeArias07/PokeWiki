@@ -3,7 +3,6 @@ package com.icesi.pokewiki.model
 import java.io.Serializable
 
 data class Pokemon (
-
     val name: String="",
     val type: String="",
     val life: Int=0,
@@ -11,5 +10,4 @@ data class Pokemon (
     val defense: Int=0,
     val speed: Int=0,
     val date: String="",
-    val img: String=""
-        )
+    val img: String="")
