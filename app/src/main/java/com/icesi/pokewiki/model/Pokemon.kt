@@ -10,4 +10,4 @@ data class Pokemon (
     val defense: Int=0,
     val speed: Int=0,
     val date: String="",
-    val img: String="")
+    val img: String="") : Serializable

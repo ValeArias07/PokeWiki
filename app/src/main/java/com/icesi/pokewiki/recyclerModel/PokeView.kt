@@ -11,9 +11,8 @@ import com.icesi.pokewiki.model.Pokemon
 
 class PokeView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     ///State
-    var clickRowListener: ClickRowListener? = null
-    var pokemon: Pokemon? = null
-    var uri: Uri?= null
+    lateinit var clickRowListener: ClickRowListener
+    lateinit var pokemon: Pokemon
     /// UI Components
     var pokeName : TextView = itemView.findViewById(R.id.pokeNameText)
     var pokeDate: TextView = itemView.findViewById(R.id.datePokeText)
@@ -22,12 +21,12 @@ class PokeView(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
         pokerowLayout.setOnClickListener {
-            clickRowListener?.onClickRowListener(pokeName.text.toString())
+            clickRowListener.onClickRowListener(pokemon)
         }
     }
 
     interface ClickRowListener{
-        fun onClickRowListener(pokeName: String)
+        fun onClickRowListener(pokemon: Pokemon)
     }
 }
 

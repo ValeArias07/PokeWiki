@@ -11,4 +11,9 @@
     <string name="username_login_fail">Nombre de usuario incorrecto o no existe</string>
     <string name="username_empty_fail">Nombre de usuario incorrecto o no existe</string>
     <string name="username_clone_fail">Ese nombre de usuario ya existe, escribe otro</string>
+    <string name="pokename_empty">Escribe un nombre de pokemon valido</string>
+    <string name="success_catch">Se ha capturado el pokemon con exito</string>
+    <string name="pokemon_not_found">No se ha encontrado ningún pokemon capturado con ese nombre</string>
+    <string name="pokemon_exist">Ese pokemon ya lo capturaste!</string>
+    <string name="success_leave">Se ha liberado al pokemon: </string>
 </resources>

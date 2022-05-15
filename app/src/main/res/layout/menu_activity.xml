@@ -102,7 +102,7 @@
             android:textAlignment="viewEnd"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/catchButton2" />
+            app:layout_constraintTop_toTopOf="@+id/catchButton" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -112,7 +112,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/catchButton2"
+            app:layout_constraintTop_toBottomOf="@+id/catchButton"
             app:srcCompat="@drawable/group" />
 
         <TextView
@@ -153,7 +153,7 @@
             app:layout_constraintTop_toTopOf="@+id/searchText" />
 
         <Button
-            android:id="@+id/catchButton"
+            android:id="@+id/watchButton"
             android:layout_width="106dp"
             android:layout_height="46dp"
             android:layout_marginStart="36dp"
@@ -162,11 +162,11 @@
             android:textStyle="bold"
             app:iconTint="#00877F69"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/catchButton2"
+            app:layout_constraintTop_toTopOf="@+id/catchButton"
             app:rippleColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/catchButton2"
+            android:id="@+id/catchButton"
             android:layout_width="106dp"
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
@@ -176,7 +176,7 @@
             app:iconTint="#00877F69"
             app:layout_constraintEnd_toStartOf="@+id/randomButton"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toEndOf="@+id/catchButton"
+            app:layout_constraintStart_toEndOf="@+id/watchButton"
             app:layout_constraintTop_toBottomOf="@+id/catchText"
             app:rippleColor="#FFFFFF" />
 
@@ -186,9 +186,9 @@
             android:layout_height="20dp"
             android:layout_marginStart="3dp"
             android:elevation="100dp"
-            app:layout_constraintBottom_toBottomOf="@+id/catchButton"
-            app:layout_constraintStart_toStartOf="@+id/catchButton"
-            app:layout_constraintTop_toTopOf="@+id/catchButton"
+            app:layout_constraintBottom_toBottomOf="@+id/watchButton"
+            app:layout_constraintStart_toStartOf="@+id/watchButton"
+            app:layout_constraintTop_toTopOf="@+id/watchButton"
             app:srcCompat="@drawable/done" />
 
         <ImageView
@@ -221,9 +221,9 @@
             android:layout_height="20dp"
             android:layout_marginStart="5dp"
             android:elevation="100dp"
-            app:layout_constraintBottom_toBottomOf="@+id/catchButton2"
-            app:layout_constraintStart_toStartOf="@+id/catchButton2"
-            app:layout_constraintTop_toTopOf="@+id/catchButton2"
+            app:layout_constraintBottom_toBottomOf="@+id/catchButton"
+            app:layout_constraintStart_toStartOf="@+id/catchButton"
+            app:layout_constraintTop_toTopOf="@+id/catchButton"
             app:srcCompat="@drawable/pokeball" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
