@@ -86,10 +86,9 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
 
     private fun setAdapter() {
         adapter = PokeAdapter()
-        var recycler = binding.recycler
         adapter.clickRowListener = this
-        recycler.layoutManager = LinearLayoutManager(this)
-        recycler.adapter = adapter
+        binding.recycler.layoutManager = LinearLayoutManager(this)
+        binding.recycler.adapter = adapter
     }
 
     private fun loadList() {

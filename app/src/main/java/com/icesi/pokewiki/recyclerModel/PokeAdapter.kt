@@ -37,7 +37,7 @@ class PokeAdapter() : RecyclerView.Adapter<PokeView>() {
     override fun onBindViewHolder(skeleton: PokeView, position: Int) {
         val pokemon = pokemons[position]
         skeleton.pokemon = pokemon
-        skeleton.pokeName.text = pokemon.name
+        skeleton.pokeName.text = pokemon.name.replaceFirstChar {it.uppercase()}
         skeleton.pokeDate.text = pokemon.date
         Glide.with(binding.root).load(pokemon.img).into(skeleton.pokeImage)
     }
