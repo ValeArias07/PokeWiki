@@ -1,8 +1,5 @@
-package com.icesi.pokewiki.activity
+package com.icesi.pokewiki.util
 
-import android.util.JsonReader
-import android.util.Log
-import com.google.gson.JsonArray
 import java.net.URL
 import javax.net.ssl.*
 

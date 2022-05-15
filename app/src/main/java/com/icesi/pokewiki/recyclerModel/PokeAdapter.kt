@@ -1,4 +1,4 @@
-package com.example.mysocialnetwork.recyclerModel
+package com.icesi.pokewiki.recyclerModel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
