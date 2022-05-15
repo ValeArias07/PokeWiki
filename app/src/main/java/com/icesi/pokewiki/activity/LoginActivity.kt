@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }else{
-                Toast.makeText(applicationContext, R.string.username_login_fail, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.username_login_fail, Toast.LENGTH_SHORT).show()
             }
         }
     }

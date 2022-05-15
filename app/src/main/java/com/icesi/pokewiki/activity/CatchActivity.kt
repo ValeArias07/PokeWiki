@@ -51,7 +51,7 @@ class CatchActivity : AppCompatActivity() {
 
     private fun goToMain(mode:String){
         val intent = Intent().apply {
-            putExtra("currentPokemon", currentUser)
+            putExtra("currentPokemon", Gson().toJson(currentPokemon))
             putExtra("mode", mode)
         }
         setResult(Activity.RESULT_OK,intent)

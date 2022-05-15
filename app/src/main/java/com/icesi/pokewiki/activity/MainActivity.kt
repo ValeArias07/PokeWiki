@@ -50,19 +50,19 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
 
             binding.catchButton.setOnClickListener {
                 val name = binding.catchText.text.toString()
-                if (name == "") Toast.makeText(applicationContext, R.string.pokename_empty, Toast.LENGTH_LONG).show()
+                if (name == "") Toast.makeText(this, R.string.pokename_empty, Toast.LENGTH_LONG).show()
                 else  getRequest(name, "catch")
             }
 
             binding.watchButton.setOnClickListener {
                 val name = binding.catchText.text.toString()
-                if (name == "") Toast.makeText(applicationContext, R.string.pokename_empty, Toast.LENGTH_LONG).show()
+                if (name == "") Toast.makeText(this, R.string.pokename_empty, Toast.LENGTH_LONG).show()
                 else  getRequest(name, "watch")
             }
 
             binding.searchButton.setOnClickListener {
                 val name = binding.catchText.text.toString()
-                if (name == "") Toast.makeText(applicationContext, R.string.pokename_empty, Toast.LENGTH_LONG).show()
+                if (name == "") Toast.makeText(this, R.string.pokename_empty, Toast.LENGTH_LONG).show()
                 else  searchPokemon(name)
             }
 
@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
         Firebase.firestore.collection("users").document(currentUser).collection("pokemon")
             .whereEqualTo("name", pokemon.name).get().addOnCompleteListener{ task ->
                 if(task.result?.size() != 0){
-                    Toast.makeText(applicationContext, R.string.pokemon_exist, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.pokemon_exist, Toast.LENGTH_SHORT).show()
                 }else{
                     Firebase.firestore.collection("users")
                     .document(currentUser)
@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
                     .set(pokemon).addOnCompleteListener{
                         adapter.addPokemon(pokemon)
                         adapter.notifyDataSetChanged()
-                        Toast.makeText(applicationContext, R.string.success_catch, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, R.string.success_catch, Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -188,7 +188,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
             .delete().addOnCompleteListener {
                 adapter.deletePokemon(pokeName)
                 adapter.notifyDataSetChanged()
-                Toast.makeText(applicationContext, "${R.string.success_leave}${pokeName}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.success_leave, Toast.LENGTH_LONG).show()
             }
     }
 
@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
                 for(document in task.result!!) pokemonFound = document.toObject(Pokemon::class.java)
                 startNewActivity(Gson().toJson(pokemonFound),"search")
             }else{
-                Toast.makeText(applicationContext, R.string.pokemon_not_found, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.pokemon_not_found, Toast.LENGTH_SHORT).show()
             }
         }
     }
