@@ -8,4 +8,5 @@
     <string name="create_user_title">CREACIÓN DE USUARIO</string>
     <string name="create_user_field">Escribe el nombre de usario que deseas:</string>
     <string name="create_user_button">CREAR</string>
+    <string name="username_login_fail">Nombre de usuario incorrecto o no existe</string>
 </resources>

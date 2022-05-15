@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
         if (intent.extras?.getString("currentUser") == null) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         } else {
             currentUser = intent.extras?.getString("currentUser").toString()
             setAdapter()

@@ -1,3 +1,5 @@
 package com.icesi.pokewiki.model
 
-data class User (val username: String="")
+import java.io.Serializable
+
+data class User (val username: String=""):Serializable
