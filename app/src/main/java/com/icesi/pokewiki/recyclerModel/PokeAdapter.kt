@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.icesi.pokewiki.R
-import com.icesi.pokewiki.databinding.MenuActivityBinding
 import com.icesi.pokewiki.model.Pokemon
 
-
-class PokeAdapter() : RecyclerView.Adapter<PokeView>() {
+class PokeAdapter : RecyclerView.Adapter<PokeView>() {
 
     lateinit var clickRowListener: PokeView.ClickRowListener
-    private var pokeList: ArrayList<Pokemon> = ArrayList<Pokemon>()
+    private var pokeList = ArrayList<Pokemon>()
     private lateinit var context:Context
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -23,7 +21,7 @@ class PokeAdapter() : RecyclerView.Adapter<PokeView>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokeView {
         //Inflater: XML-> View
-        var inflater = LayoutInflater.from(parent.context)
+        val inflater = LayoutInflater.from(parent.context)
         //row = View
         val row = inflater.inflate(R.layout.pokerow, parent, false)
         val pokeView = PokeView(row)

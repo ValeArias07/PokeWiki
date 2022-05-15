@@ -7,12 +7,8 @@ import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.icesi.pokewiki.R
-import com.icesi.pokewiki.databinding.InfoActivityBinding
-import com.icesi.pokewiki.databinding.LoginActivityBinding
 import com.icesi.pokewiki.databinding.NewUserActivityBinding
-import com.icesi.pokewiki.model.Pokemon
 import com.icesi.pokewiki.model.User
-import java.util.HashMap
 
 class NewUserActivity : AppCompatActivity() {
 
@@ -26,7 +22,7 @@ class NewUserActivity : AppCompatActivity() {
     }
 
     private fun onCreateBtnListener(){
-        var usernameCheck = binding.usernamenewText.text.toString()
+        val usernameCheck = binding.usernamenewText.text.toString()
         if(usernameCheck !=""){
             Firebase.firestore.collection("users").whereEqualTo("username", usernameCheck).get().addOnCompleteListener{ task ->
                 if(task.result?.size() == 0) {

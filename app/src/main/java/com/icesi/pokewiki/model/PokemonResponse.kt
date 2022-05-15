@@ -1,7 +1,5 @@
 package com.icesi.pokewiki.model
 
-import android.hardware.camera2.params.Capability
-
 data class PokemonResponse (
     val name: String,
     val stats: ArrayList<Stat>,
