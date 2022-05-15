@@ -15,9 +15,7 @@ import com.icesi.pokewiki.model.Pokemon
 import com.icesi.pokewiki.model.User
 
 class LoginActivity : AppCompatActivity() {
-    private val binding: LoginActivityBinding by lazy {
-        LoginActivityBinding.inflate(layoutInflater)
-    }
+    private val binding: LoginActivityBinding by lazy { LoginActivityBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,45 +6,40 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.icesi.pokewiki.R
 import com.icesi.pokewiki.databinding.InfoActivityBinding
 import com.icesi.pokewiki.databinding.LoginActivityBinding
 import com.icesi.pokewiki.databinding.NewUserActivityBinding
 import com.icesi.pokewiki.model.Pokemon
+import com.icesi.pokewiki.model.User
 import java.util.HashMap
 
 class NewUserActivity : AppCompatActivity() {
 
-    private lateinit var binding: NewUserActivityBinding
+    private val binding: NewUserActivityBinding by lazy { NewUserActivityBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = NewUserActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.createButton.setOnClickListener { onCreateBtnListener() }
+        binding.exitButtonM.setOnClickListener { finish() }
+    }
 
-        binding.createButton.setOnClickListener {
-            var username = binding.usernamenewText.text.toString()
-            if(username !=""){
-                Firebase.firestore.collection("users")
-                    .document(username)
-                    .get()
-                    .addOnCompleteListener {
-                        task ->
-
-                        if(task.result.data == null){
-                            val add = HashMap<String, Any>()
-                            add["username"] = username
-                            Firebase.firestore.collection("users")
-                                .document(username)
-                                .set(add)
-
+    private fun onCreateBtnListener(){
+        var usernameCheck = binding.usernamenewText.text.toString()
+        if(usernameCheck !=""){
+            Firebase.firestore.collection("users").whereEqualTo("username", usernameCheck).get().addOnCompleteListener{ task ->
+                if(task.result?.size() == 0) {
+                    Firebase.firestore.collection("users").document(usernameCheck).set(User(usernameCheck))
+                        .addOnCompleteListener {
                             val intent = Intent(this, MainActivity::class.java).apply {
-                                putExtra("currentUser", username)
+                                putExtra("currentUser", usernameCheck)
                             }
                             startActivity(intent)
-                        }else{
-                            Toast.makeText(applicationContext, "Escribe otro nombre de usuario", Toast.LENGTH_LONG).show()
+                            finish()
                         }
-                    }
-                }
+                }else Toast.makeText(applicationContext, R.string.username_clone_fail, Toast.LENGTH_LONG).show()
             }
-        }
+        }else Toast.makeText(applicationContext, R.string.username_empty_fail, Toast.LENGTH_SHORT).show()
+    }
 }
