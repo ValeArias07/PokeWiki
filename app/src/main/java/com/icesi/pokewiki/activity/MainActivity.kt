@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
             }
 
             binding.searchButton.setOnClickListener {
-                val name = binding.catchText.text.toString()
+                val name = binding.searchText.text.toString()
                 if (name == "") Toast.makeText(this, R.string.pokename_empty, Toast.LENGTH_LONG).show()
                 else  searchPokemon(name)
             }
