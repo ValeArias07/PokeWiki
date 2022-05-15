@@ -152,11 +152,11 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
             Integer.parseInt(pokeResponse.stats[1].base_stat),
             Integer.parseInt(pokeResponse.stats[2].base_stat),
             Integer.parseInt(pokeResponse.stats[3].base_stat),
-            pokeResponse.sprites.other.home.front_default,
-            date.format(Date())
+            date.format(Date()),
+            pokeResponse.sprites.other.home.front_default
         )
         when(mode){
-            "watch" ->  startNewActivity("watch",Gson().toJson(pokemon))
+            "watch" ->  startNewActivity(Gson().toJson(pokemon),"watch")
             "catch" ->  savePokemon(pokemon)
         }
     }
