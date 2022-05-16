@@ -3,15 +3,15 @@ package com.icesi.pokewiki.model
 data class PokemonResponse (
     val name: String,
     val stats: ArrayList<Stat>,
-    val abilities: ArrayList<Ability>,
+    val types: ArrayList<Type>,
     val sprites: Sprite
 )
 
-data class Ability (
-    val ability: AbilityData
+data class Type (
+    val type: TypeData
 )
 
-class AbilityData {
+class TypeData {
     val name: String=""
 }
 

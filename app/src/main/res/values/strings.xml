@@ -24,4 +24,9 @@
     <string name="pokemon_not_found">No se ha encontrado ningún pokemon capturado con ese nombre</string>
     <string name="pokemon_exist">Ese pokemon ya lo capturaste!</string>
     <string name="success_leave">Se ha liberado al pokemon</string>
+    <string name="defense_stat">Defensa</string>
+    <string name="atack_stat">Ataque</string>
+    <string name="health_stat">Vida</string>
+    <string name="velocity_stat">Velocidad</string>
+    
 </resources>

@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() , PokeView.ClickRowListener {
         val date = SimpleDateFormat(" d 'de' MMMM 'de' yyyy \n hh:mm:ss", Locale("es", "COL"))
         val pokemon =  Pokemon(
             pokeResponse.name,
-            pokeResponse.abilities[1].ability.name,
+            pokeResponse.types[0].type.name,
             Integer.parseInt(pokeResponse.stats[0].base_stat),
             Integer.parseInt(pokeResponse.stats[1].base_stat),
             Integer.parseInt(pokeResponse.stats[2].base_stat),
