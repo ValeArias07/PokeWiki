@@ -37,7 +37,7 @@ class CatchActivity : AppCompatActivity() {
     }
 
     private fun setData(pokemon: Pokemon) {
-        binding.nameText.text = pokemon.name.replaceFirstChar { it.uppercase() }
+        binding.nameText.text = pokemon.name.uppercase()
         binding.typeText.text = (pokemon.type)
         binding.defenseText.text = ("${pokemon.defense}")
         binding.attackText.text = ("${pokemon.attack}")
