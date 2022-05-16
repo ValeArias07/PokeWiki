@@ -109,6 +109,7 @@
             android:textAlignment="viewEnd"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/catchButton"
             app:layout_constraintTop_toTopOf="@+id/catchButton" />
 
         <ImageView
@@ -170,6 +171,7 @@
             android:textSize="12sp"
             android:textStyle="bold"
             app:iconTint="#00877F69"
+            app:layout_constraintEnd_toStartOf="@+id/catchButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/catchButton"
             app:rippleColor="#FFFFFF" />
@@ -178,7 +180,9 @@
             android:id="@+id/catchButton"
             android:layout_width="106dp"
             android:layout_height="48dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/catch_btn"
             android:textAlignment="viewEnd"
             android:textSize="12sp"
