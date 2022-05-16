@@ -9,4 +9,5 @@
     <color name="primaryTextColor">#333333</color>
     <color name="secondaryTextColor">#333333</color>
     <color name="LightColor">#FFFFFF</color>
+    <color name="rowColor">#3CFFE757</color>
 </resources>

@@ -6,8 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/pokeNameTextRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/primaryDarkColor"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/pokeImageRight"
+        app:layout_constraintTop_toTopOf="@+id/pokeImageRight"
+        tools:text="Nombre de pokemon" />
+
     <ImageView
-        android:id="@+id/pokeImage"
+        android:id="@+id/pokeImageRight"
+        android:layout_width="87dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/pokeImageLeft"
         android:layout_width="87dp"
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
@@ -16,39 +42,51 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/pokeNameText"
+        android:id="@+id/pokeNameTextLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Nombre de pokemon"
         android:textColor="@color/primaryDarkColor"
         android:textSize="18dp"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
-        app:layout_constraintTop_toTopOf="@+id/pokeImage" />
+        app:layout_constraintStart_toEndOf="@+id/pokeImageLeft"
+        app:layout_constraintTop_toTopOf="@+id/pokeImageLeft"
+        tools:text="Nombre de pokemon" />
 
     <TextView
-        android:id="@+id/datePokeText"
+        android:id="@+id/datePokeTextLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="Fecha"
         android:textSize="14dp"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
-        app:layout_constraintTop_toBottomOf="@+id/pokeNameText" />
+        app:layout_constraintStart_toEndOf="@+id/pokeImageLeft"
+        app:layout_constraintTop_toBottomOf="@+id/pokeNameTextLeft"
+        tools:text="Fecha" />
 
     <View
         android:id="@+id/separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/secondaryLightColor"
+        android:background="@color/secondaryDarkColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/datePokeTextRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/pokeImageRight"
+        app:layout_constraintTop_toBottomOf="@+id/pokeNameTextRight"
+        tools:text="Fecha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

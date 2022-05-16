@@ -13,10 +13,13 @@ class PokeView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     lateinit var clickRowListener: ClickRowListener
     lateinit var pokemon: Pokemon
     /// UI Components
-    var pokeName : TextView = itemView.findViewById(R.id.pokeNameText)
-    var pokeDate: TextView = itemView.findViewById(R.id.datePokeText)
-    var pokeImage: ImageView = itemView.findViewById(R.id.pokeImage)
-    private var pokerowLayout: ConstraintLayout = itemView.findViewById(R.id.pokerowLayout)
+    var pokeNameLeft : TextView = itemView.findViewById(R.id.pokeNameTextLeft)
+    var pokeDateLeft: TextView = itemView.findViewById(R.id.datePokeTextLeft)
+    var pokeImageLeft: ImageView = itemView.findViewById(R.id.pokeImageLeft)
+    var pokeNameRight : TextView = itemView.findViewById(R.id.pokeNameTextRight)
+    var pokeDateRight: TextView = itemView.findViewById(R.id.datePokeTextRight)
+    var pokeImageRight: ImageView = itemView.findViewById(R.id.pokeImageRight)
+    var pokerowLayout: ConstraintLayout = itemView.findViewById(R.id.pokerowLayout)
 
     init {
         pokerowLayout.setOnClickListener {
